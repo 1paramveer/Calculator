@@ -44,6 +44,18 @@ button:active {
   text-align: right;
 }
 
+.resultDisplay {
+  height: 20px;
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 2px solid $button-gray;
+  margin: 10px;
+  border-radius: 10px;
+}
 .calcKeys {
   margin: 5px;
   display: grid;
@@ -63,6 +75,7 @@ button:active {
     background-color: $button-gray;
   }
   .special {
+    font-size: 30px;
     background-color: $button-yellow;
   }
 
