@@ -61,6 +61,9 @@ divide.addEventListener("click", () => {
 // Special
 
 clear.addEventListener("click", () => {
+  operator = "";
+  firstOperand = "";
+  secondOperand = "";
   calcDisplay.innerText = 0;
   resultDisplay.innerText = "";
 });
@@ -80,6 +83,9 @@ equal.addEventListener("click", () => {
     }
   }
   operate(operator, firstOperand, secondOperand);
+  operator = "";
+  firstOperand = "";
+  secondOperand = "";
   resultDisplay.innerText = "";
 });
 
