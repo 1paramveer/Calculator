@@ -26,6 +26,11 @@ function watch() {
         !(e.target.innerText === "." && calcDisplay.innerText.includes("."))
       ) {
         calcDisplay.innerText += e.target.innerText;
+      } else if (
+        resultDisplay.innerText.charAt(resultDisplay.innerText.length - 1) ===
+        operator
+      ) {
+        calcDisplay.innerText += e.target.innerText;
       }
     });
   });
@@ -34,28 +39,40 @@ function watch() {
 watch();
 
 plus.addEventListener("click", () => {
-  firstOperand = calcDisplay.innerText;
-  operator = "+";
-  calcDisplay.innerText = 0;
-  resultDisplay.innerText += `${firstOperand} + `;
+  if (!operator) {
+    // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "+";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} + `;
+  }
 });
 minus.addEventListener("click", () => {
-  firstOperand = calcDisplay.innerText;
-  operator = "-";
-  calcDisplay.innerText = 0;
-  resultDisplay.innerText += `${firstOperand} - `;
+  if (!operator) {
+    // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "-";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} - `;
+  }
 });
 multiply.addEventListener("click", () => {
-  firstOperand = calcDisplay.innerText;
-  operator = "x";
-  calcDisplay.innerText = 0;
-  resultDisplay.innerText += `${firstOperand} x `;
+  if (!operator) {
+    // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "x";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} x `;
+  }
 });
 divide.addEventListener("click", () => {
-  firstOperand = calcDisplay.innerText;
-  operator = "/";
-  calcDisplay.innerText = 0;
-  resultDisplay.innerText += `${firstOperand} / `;
+  if (!operator) {
+    // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "/";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} / `;
+  }
 });
 
 // Special
