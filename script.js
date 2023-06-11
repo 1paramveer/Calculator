@@ -26,11 +26,6 @@ function watch() {
         !(e.target.innerText === "." && calcDisplay.innerText.includes("."))
       ) {
         calcDisplay.innerText += e.target.innerText;
-      } else if (
-        resultDisplay.innerText.charAt(resultDisplay.innerText.length - 1) ===
-        operator
-      ) {
-        calcDisplay.innerText += e.target.innerText;
       }
     });
   });
