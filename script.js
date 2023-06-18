@@ -40,11 +40,23 @@ plus.addEventListener("click", () => {
     operator = "+";
     calcDisplay.innerText = 0;
     resultDisplay.innerText += `${firstOperand} + `;
+  } else if (operator) {
+    calculate();
+    firstOperand = calcDisplay.innerText;
+    operator = "+";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} + `;
   }
 });
 minus.addEventListener("click", () => {
   if (!operator) {
     // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "-";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} - `;
+  } else if (operator) {
+    calculate();
     firstOperand = calcDisplay.innerText;
     operator = "-";
     calcDisplay.innerText = 0;
@@ -58,11 +70,23 @@ multiply.addEventListener("click", () => {
     operator = "x";
     calcDisplay.innerText = 0;
     resultDisplay.innerText += `${firstOperand} x `;
+  } else if (operator) {
+    calculate();
+    firstOperand = calcDisplay.innerText;
+    operator = "x";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} x `;
   }
 });
 divide.addEventListener("click", () => {
   if (!operator) {
     // checks if the last input of the user is input or not
+    firstOperand = calcDisplay.innerText;
+    operator = "/";
+    calcDisplay.innerText = 0;
+    resultDisplay.innerText += `${firstOperand} / `;
+  } else if (operator) {
+    calculate();
     firstOperand = calcDisplay.innerText;
     operator = "/";
     calcDisplay.innerText = 0;
@@ -81,6 +105,10 @@ clear.addEventListener("click", () => {
 });
 
 equal.addEventListener("click", () => {
+  calculate();
+});
+
+function calculate() {
   // Issues Regarding user input
   if (calcDisplay.innerText == decimal.innerText) {
     alert("Cannot add decimal after an operator");
@@ -113,4 +141,4 @@ equal.addEventListener("click", () => {
   firstOperand = "";
   secondOperand = "";
   resultDisplay.innerText = "";
-});
+}
