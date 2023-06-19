@@ -53,9 +53,10 @@ button:active {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: 2px solid $button-gray;
+  border: none;
+  background-color: rgba(#d4d4d2, 0.3);
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 .calcKeys {
